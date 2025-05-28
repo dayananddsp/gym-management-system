@@ -1,0 +1,179 @@
+/* Global Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: Arial, sans-serif;
+  background: #f0f0f0;
+}
+
+/* ---------- LOGIN PAGE ---------- */
+body.login-page {
+  background-color: #f0f0f0;
+}
+.login-container {
+  width: 350px;
+  margin: 100px auto;
+  background: white;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #aaa;
+}
+.login-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.input-group {
+  margin: 15px 0;
+}
+.input-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.input-group input {
+  width: 100%;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #aaa;
+}
+.error {
+  color: red;
+  font-size: 14px;
+  text-align: center;
+}
+.submit-btn {
+  width: 100%;
+  padding: 10px;
+  background: #333;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.submit-btn:hover {
+  background: #555;
+}
+
+/* ---------- REGISTRATION PAGE ---------- */
+body.registration-page {
+  background: #f5f6fa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.registration-form {
+  background: #fff;
+  padding: 25px 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 400px;
+}
+.registration-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+.registration-form .form-group {
+  margin-bottom: 15px;
+}
+.registration-form label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: #333;
+}
+.registration-form input,
+.registration-form select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+.registration-form .submit-btn {
+  background: #28a745;
+  margin-top: 10px;
+}
+.registration-form .submit-btn:hover {
+  background: #218838;
+}
+
+/* ---------- ADMIN DASHBOARD PAGE ---------- */
+body.admin-page {
+  background: #f0f2f5;
+}
+.header {
+  background: #333;
+  color: white;
+  padding: 15px;
+  text-align: center;
+}
+.container {
+  display: flex;
+}
+.sidebar {
+  width: 220px;
+  background: #222;
+  height: 100vh;
+  color: white;
+  padding-top: 20px;
+}
+.sidebar a {
+  display: block;
+  color: white;
+  padding: 12px 20px;
+  text-decoration: none;
+}
+.sidebar a:hover {
+  background: #444;
+}
+.main {
+  flex: 1;
+  padding: 20px;
+}
+.card {
+  background: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+.card h2 {
+  margin-top: 0;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+table, th, td {
+  border: 1px solid #ddd;
+}
+th, td {
+  padding: 10px;
+  text-align: left;
+}
+th {
+  background: #f5f5f5;
+}
+.action-btn {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.edit-btn {
+  background-color: #4CAF50;
+  color: white;
+}
+.delete-btn {
+  background-color: #f44336;
+  color: white;
+}
