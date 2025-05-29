@@ -3,8 +3,8 @@
 <html lang="en">
 <head>
       <title>Client Registration</title>
+      <link rel="stylesheet" href="style.css">
 </head>
-<link rel="stylesheet" href="style.css">
 <body class="registration-page">
 
   <form class="registration-form" action="Registration_form.php" method="POST" id="regForm">
@@ -45,29 +45,34 @@
   <!-- Add this just before your script or inside the <head> -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-  <script>
+  <script>  
     $('#regForm').on('submit', function(e){
-        e.preventDefault();
+  e.preventDefault();
 
-        var formData = $(this).serialize()+'&action=register_client';
+  const formData = new FormData(this);
+  formData.append('action', 'register_client');
 
-        $.ajax({
-            url : 'ajax_handler.php',
-            method : 'POST',
-            data : formData,
-            dataType : 'json',
-            success : function(response){
-                 $('#message').text(response.message).css('color', response.success ? 'green' : 'red');
-          if (response.success) {
-            $('#regForm')[0].reset();
-          }
-        },
-        error: function() {
-          $('#message').text('Something went wrong.').css('color', 'red');
-        }
-        });
+  $.ajax({
+    url: 'ajax_handler.php',
+    method: 'POST',
+    data: formData,
+    processData: false,
+    contentType: false, 
+    dataType: 'json',
+    success: function(response){
+      $('#message')
+        .text(response.message)
+        .css('color', response.success ? 'green' : 'red');
+      if (response.success) {
+        $('#regForm')[0].reset();
+      }
+    },
+    error: function() {
+      $('#message').text('Something went wrong.').css('color', 'red');
+    }
+  });
+});
 
-    });
   </script>
 
 </body>

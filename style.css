@@ -114,8 +114,10 @@ body.admin-page {
   padding: 15px;
   text-align: center;
 }
-.container {
+.container-fluid {
   display: flex;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 .sidebar {
   width: 220px;
@@ -172,8 +174,10 @@ th {
 .edit-btn {
   background-color: #4CAF50;
   color: white;
+  padding: 4px;
 }
 .delete-btn {
   background-color: #f44336;
   color: white;
+  padding: 4px;
 }

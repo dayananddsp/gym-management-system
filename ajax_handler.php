@@ -2,7 +2,7 @@
 include 'db.php';
 header('Content-Type: application/json');
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['action'])) {
 $action = $_POST['action'] ??'';
 
 switch ($action) {  
@@ -23,13 +23,39 @@ switch ($action) {
         echo json_encode(["success" => false, "message" => "Error: " . $stmt->error]);
     }
         $stmt->close();
-        $conn->close();
         break;
 
-    default:
-        echo json_encode(["success"=> false,"message"=> "Invalid Action"]);
-        break;
-}
-}
+    case 'fetch_client':
+        $query = "SELECT * FROM register";
+        $result = mysqli_query($conn, $query);
 
+        $clients = [];
+        while ($row = mysqli_fetch_assoc($result)){
+            $clients[] = $row;
+        }
+    
+    echo json_encode(["success"=> true, "data" => $clients]);
+    exit;
+
+    case 'delete_client':
+        $id = $_POST['id'] ?? '';
+        $stmt = $conn->prepare('DELETE FROM register Where id = ?');
+        $stmt->bind_param('i',$id);
+        echo json_encode([
+            "success" => $stmt->execute(),
+            "message" => $stmt->execute() ? "Delete successfully." : "Delete Failed."
+        ]);
+        $stmt->close();
+        break;
+    
+    case 'get_single_client':
+        $id = intval($POST['id']);
+        $stmt = $conn->prepare("SELECT * FROM register Where id = ?");
+        $stmt->execute(['id']);
+        $data = $stmt->fetch(PDO::FETCH_ASSOC);
+        echo json_encode(['success' => $data ? true : false,'data'=> $data]);
+        exit;
+        
+    }
+}
 ?>
