@@ -1,4 +1,4 @@
-/* Global Styles */
+/* ---------- GLOBAL ---------- */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -6,7 +6,9 @@
 }
 body {
   font-family: Arial, sans-serif;
-  background: #f0f0f0;
+  background-color: #f5f5f5;
+  display: flex;
+  min-height: 100vh;
 }
 
 /* ---------- LOGIN PAGE ---------- */
@@ -60,19 +62,16 @@ body.login-page {
 
 /* ---------- REGISTRATION PAGE ---------- */
 body.registration-page {
-  background: #f5f6fa;
-  display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
 }
 .registration-form {
   background: #fff;
   padding: 25px 30px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  width: 100%;
   max-width: 400px;
+  width: 100%;
 }
 .registration-form h2 {
   text-align: center;
@@ -104,7 +103,7 @@ body.registration-page {
   background: #218838;
 }
 
-/* ---------- ADMIN DASHBOARD PAGE ---------- */
+/* ---------- ADMIN DASHBOARD ---------- */
 body.admin-page {
   background: #f0f2f5;
 }
@@ -120,22 +119,22 @@ body.admin-page {
   padding-right: 0 !important;
 }
 .sidebar {
-  width: 220px;
-  background: #222;
-  height: 100vh;
+  width: 240px;
+  background-color: #343a40;
   color: white;
   padding-top: 20px;
 }
 .sidebar a {
-  display: block;
-  color: white;
+  color: #fff;
   padding: 12px 20px;
+  display: block;
   text-decoration: none;
 }
 .sidebar a:hover {
-  background: #444;
+  background-color: #495057;
 }
-.main {
+.main,
+.main-content {
   flex: 1;
   padding: 20px;
 }
@@ -175,9 +174,119 @@ th {
   background-color: #4CAF50;
   color: white;
   padding: 4px;
+  border: 0;
 }
 .delete-btn {
-  background-color: #f44336;
+  background-color: #8b251d;
   color: white;
   padding: 4px;
+}
+.delete-btn:hover {
+  background-color: #e31102 !important;
+}
+.givediet-btn {
+  float: inline-end;
+}
+.alreadyuser {
+  text-align: center;
+  padding-top: 20px;
+  text-decoration: none;
+}
+.profile-pic {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #007bff;
+}
+.nav-link a {
+  text-decoration: none;
+}
+
+/* ---------- CHAT UI ---------- */
+.chat-container {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  overflow: hidden;
+}
+.chat-box {
+  height: 300px;
+  overflow-y: auto;
+  padding: 15px;
+  background: #f8f9fa;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.message {
+  max-width: 70%;
+  padding: 10px 15px;
+  border-radius: 20px;
+  font-size: 14px;
+  word-wrap: break-word;
+}
+.admin-msg {
+  background: #007bff;
+  color: white;
+  align-self: flex-end;
+  border-bottom-right-radius: 0;
+}
+.client-msg {
+  background: #e9ecef;
+  color: #333;
+  align-self: flex-start;
+  border-bottom-left-radius: 0;
+}
+.chat-input-area {
+  display: flex;
+  padding: 10px;
+  background: #fff;
+  border-top: 1px solid #ccc;
+}
+.chat-input-area input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #bbb;
+  border-radius: 20px;
+  outline: none;
+}
+.chat-input-area button {
+  margin-left: 10px;
+  padding: 10px 20px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.chat-box div.bg-light {
+  background-color: #eaeaea !important;
+}
+.chat-box div.bg-primary {
+  background-color: #007bff !important;
+  color: white;
+}
+
+/* ---------- MISC ---------- */
+.error-msg {
+  color: red;
+  font-size: 13px;
+  margin-top: 5px;
+}
+#deleteSelectedMealsBtn {
+  width: fit-content;
+}
+#allDietData ul {
+  list-style: none;
+  padding-left: 10px;
+}
+#messagesSection, 
+#messagesSection .row {
+  height: 100%;
+}
+#adminChatBox {
+  height: 94%;
 }
