@@ -1,9 +1,0 @@
-Array
-(
-    [full_name] => Dayanand
-    [email] => priteshdpatildsp@gmail.com
-    [phone] => 8758958
-    [diet_plan] => Weight Loss
-    [password] => 545d44d
-    [action] => register_client
-)
